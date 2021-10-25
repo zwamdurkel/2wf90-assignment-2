@@ -49,6 +49,7 @@ for exercise in my_exercises['exercises']:
     operation = exercise[0]  # get operation type
     p = exercise[1]  # get parameters
 
+    # TODO
     if operation == 'add-field':
         p['answer'], p['answer-poly'] = addField(
             p['mod'], p['mod-poly'], p['a'], p['b'])
