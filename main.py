@@ -27,8 +27,6 @@ from method.subtractPoly import subtractPoly
 # Below code should behave like a black-box.
 # That means that by clicking RUN (and, perhaps, changing the location of the exercise file), your output file should be generated.
 
-addField(1, 1, 1, 1)
-
 base_location = './'
 ops_loc = base_location + 'operations.asn'
 exs_loc = base_location + 'input.ops'
@@ -56,8 +54,8 @@ for exercise in my_exercises['exercises']:
             p['mod'], p['mod-poly'], p['a'], p['b'])
 
     if operation == 'add-table':
-        p['answer'] = ['X+1', '2X+1']
-        p['answer-poly'] = [[1, 1], [2, 1]]
+        p['answer'], p['answer-poly'] = addTable(
+            p['mod'], p['mod-poly'])
 
     # Save answer
     my_answers['exercises'].append({operation: p})

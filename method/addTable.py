@@ -5,4 +5,4 @@
 #                   In final format, the output is supposed to be a sequence of rows (see examples).
 
 def addTable(mod, modPoly):
-    return ""
+    return [[""], [""]], [[], []]
