@@ -8,7 +8,6 @@ def displayPoly(mod, f):
     s = ''
     i = len(f) - 1
     for x in f:
-
         if x != 0:
             if x != 1:
                 if i == 0:
@@ -31,6 +30,8 @@ def displayPoly(mod, f):
                     s = s + '+'
                 s = s + 'X^' + str(i)
                 i = i - 1
+        else:
+            i = i - 1
     print('Answer:' + s)
     return s
 
