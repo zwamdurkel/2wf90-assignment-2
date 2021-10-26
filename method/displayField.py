@@ -6,3 +6,5 @@
 
 def displayField(mod, modPoly, a):
     return ""
+
+#FINNEAN
