@@ -16,7 +16,7 @@ from method.inverseField import inverseField
 from method.irreducible import irreducible
 from method.longDivPoly import longDivPoly
 from method.multiplyField import multiplyField
-from method.multiplyPoly import multiplyPoly
+from method.multiplyPoly import multiplyPoly  # ALOYS # CORRECT
 from method.multTable import multTable
 from method.primitive import primitive
 from method.subtractField import subtractField
@@ -56,6 +56,10 @@ for exercise in my_exercises['exercises']:
     if operation == 'display-poly':
         p['answer'] = displayPoly(
             p['mod'], p['f'])
+
+    if operation == 'multiply-poly':
+        p['answer'], p['answer-poly'] = multiplyPoly(
+            p['mod'], p['f'], p['g'])
 
     if operation == 'subtract-poly':
         p['answer'], p['answer-poly'] = subtractPoly(
