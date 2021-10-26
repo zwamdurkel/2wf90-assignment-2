@@ -2,7 +2,7 @@ import asn1tools as asn
 import json
 
 from method.addField import addField
-from method.addPoly import addPoly
+from method.addPoly import addPoly  # ALOYS # CORRECT
 from method.addTable import addTable
 from method.displayField import displayField
 from method.displayPoly import displayPoly
@@ -20,7 +20,7 @@ from method.multiplyPoly import multiplyPoly
 from method.multTable import multTable
 from method.primitive import primitive
 from method.subtractField import subtractField
-from method.subtractPoly import subtractPoly
+from method.subtractPoly import subtractPoly  # ALOYS # CORRECT
 
 ### STUDENT PERSPECTIVE (example) ###
 
@@ -49,18 +49,17 @@ for exercise in my_exercises['exercises']:
     operation = exercise[0]  # get operation type
     p = exercise[1]  # get parameters
 
-    # TODO
-    if operation == 'add-field':
-        p['answer'], p['answer-poly'] = addField(
-            p['mod'], p['mod-poly'], p['a'], p['b'])
-
-    if operation == 'add-table':
-        p['answer'], p['answer-poly'] = addTable(
-            p['mod'], p['mod-poly'])
+    if operation == 'add-poly':
+        p['answer'], p['answer-poly'] = addPoly(
+            p['mod'], p['f'], p['g'])
 
     if operation == 'display-poly':
         p['answer'] = displayPoly(
             p['mod'], p['f'])
+
+    if operation == 'subtract-poly':
+        p['answer'], p['answer-poly'] = subtractPoly(
+            p['mod'], p['f'], p['g'])
 
     # Save answer
     my_answers['exercises'].append({operation: p})
