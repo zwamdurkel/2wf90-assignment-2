@@ -1,1 +1,1 @@
-{"exercises": [{"display-poly": {"mod": 7, "f": [1, 2, 6], "answer": "1X^3 2X^2 6X^1 "}}]}
+{"exercises": [{"display-poly": {"mod": 7, "f": [1, 2, 6], "answer": "X^2+2X+6"}}]}

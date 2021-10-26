@@ -6,14 +6,23 @@
 
 def displayPoly(mod, f):
     s = ''
-    i = len(f)
+    i = len(f) - 1
     for x in f:
+        if i != len(f) - 1:
+            s = s + '+'
         if x != 0:
             if x != 1:
-                s = s + str(x % mod) + 'X^' + str(i) + ' '
-                i = i - 1
+                if i == 0:
+                    s = s + str(x % mod)
+                    i = i - 1
+                elif i == 1:
+                    s = s +  str(x % mod) + 'X'
+                    i = i - 1
+                else: 
+                    s = s +  str(x % mod) + 'X^' + str(i)
+                    i = i - 1   
             else:
-                s = s + 'X^' + str(i) + ' '
+                s = s + 'X^' + str(i)
                 i = i - 1
     print('Answer:' + s)
     return s
