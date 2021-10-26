@@ -8,9 +8,14 @@ def displayPoly(mod, f):
     s = ''
     i = len(f)
     for x in f:
-        s = s + x % mod + 'X'^i
-        i = i - 1
-    print(s)
+        if x != 0:
+            if x != 1:
+                s = s + str(x % mod) + 'X^' + str(i) + ' '
+                i = i - 1
+            else:
+                s = s + 'X^' + str(i) + ' '
+                i = i - 1
+    print('Answer:' + s)
     return s
 
 #FINNEAN

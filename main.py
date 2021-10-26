@@ -59,8 +59,8 @@ for exercise in my_exercises['exercises']:
             p['mod'], p['mod-poly'])
 
     if operation == 'display-poly':
-        p['answer'] = addTable(
-            p['mod'], p['mod-poly'])
+        p['answer'] = displayPoly(
+            p['mod'], p['f'])
 
     # Save answer
     my_answers['exercises'].append({operation: p})
