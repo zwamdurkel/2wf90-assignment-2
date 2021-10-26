@@ -8,21 +8,20 @@ from method.displayPoly import displayPoly
 
 def multiplyPoly(mod, f, g):
     answer = [0] * (len(f) + len(g))
+    # Reverse for easy for-loop
     f_rev = f[::-1]
     g_rev = g[::-1]
 
-    print(f_rev, g_rev, f, g, answer)
-
+    # For each element in f, multiply with each element in g. Then add to answer
     for i in range(len(f)):
         for j in range(len(g)):
             answer[i + j] = (answer[i + j] + f_rev[i] * g_rev[j]) % mod
 
+    # Reverse answer back to right order
     answer.reverse()
 
     # Remove unnecessary 0's
     while answer[0] == 0:
         answer.pop(0)
-
-    print(answer)
 
     return displayPoly(mod, answer), answer
