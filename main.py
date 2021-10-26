@@ -29,7 +29,7 @@ from method.subtractPoly import subtractPoly
 
 base_location = './'
 ops_loc = base_location + 'operations.asn'
-exs_loc = base_location + 'input.ops'
+exs_loc = base_location + 'custom.ops'
 
 # Compile specification
 spec = asn.compile_files(ops_loc, codec="jer")
@@ -56,6 +56,10 @@ for exercise in my_exercises['exercises']:
 
     if operation == 'add-table':
         p['answer'], p['answer-poly'] = addTable(
+            p['mod'], p['mod-poly'])
+
+    if operation == 'display-poly':
+        p['answer'] = addTable(
             p['mod'], p['mod-poly'])
 
     # Save answer

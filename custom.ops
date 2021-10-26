@@ -1,0 +1,19 @@
+{
+  "exercises": [
+    {
+      "display-poly": {
+        "mod": 7,
+        "f": [
+          1,
+          2,
+          6
+        ],
+        "answer": "X^2+2X+6",
+        "answer-poly": [
+          1,
+          2,
+          6
+        ]
+      }
+    }
+}
