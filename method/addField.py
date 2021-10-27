@@ -4,4 +4,6 @@
 #                   Output f as pretty print string and as POLY.
 
 def addField(mod, modPoly, a, b):
+
+
     return "", []
