@@ -7,4 +7,10 @@
 #                   Output a, b, and d as pretty print string and as POLY, each.
 
 def euclidPoly(mod, f, g):
+    x = 1
+    v = 1
+    y = 0
+    u = 0
+    while g != 0:
+        q = 0
     return ""

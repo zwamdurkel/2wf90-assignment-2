@@ -77,6 +77,48 @@
           6
         ]
       }
+    },
+    {
+      "long-div-poly": {
+        "mod": 7,
+        "f": [
+          6
+        ],
+        "g": [
+          5
+        ],
+        "answ-q": "4",
+        "answ-r": "0",
+        "answ-q-poly": [
+          4
+        ],
+        "answ-r-poly": [
+          0
+        ]
+      }
+    },
+    {
+      "long-div-poly": {
+        "mod": 7,
+        "f": [
+          1,
+          1,
+          1
+        ],
+        "g": [
+          2,
+          -2
+        ],
+        "answ-q": "4X+1",
+        "answ-r": "3",
+        "answ-q-poly": [
+          4,
+          1
+        ],
+        "answ-r-poly": [
+          3
+        ]
+      }
     }
   ]
 }

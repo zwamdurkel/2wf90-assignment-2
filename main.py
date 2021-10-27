@@ -5,7 +5,7 @@ from method.addField import addField
 from method.addPoly import addPoly  # ALOYS # CORRECT
 from method.addTable import addTable
 from method.displayField import displayField
-from method.displayPoly import displayPoly
+from method.displayPoly import displayPoly #FINNEAN #SUPER CORRECT
 from method.divisionField import divisionField
 from method.equalsField import equalsField
 from method.equalsPolyMod import equalsPolyMod
@@ -63,6 +63,14 @@ for exercise in my_exercises['exercises']:
 
     if operation == 'subtract-poly':
         p['answer'], p['answer-poly'] = subtractPoly(
+            p['mod'], p['f'], p['g'])
+
+    if operation == 'long-div-poly':
+        p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
+            p['mod'], p['f'], p['g'])
+
+    if operation == 'euclid-poly':
+        p['answer-a'], p['answer-b'], p['answer-d'], p['answer-d-poly'] = euclidPoly(
             p['mod'], p['f'], p['g'])
 
     # Save answer

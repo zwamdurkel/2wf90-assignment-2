@@ -4,5 +4,66 @@
 #                   r ∈ Z/pZ[X] such that f = q · g + r in Z/pZ[X] (see e.g. Algorithm 2.2.2).
 #                   Output q and r as pretty print string and as POLY, each.
 
+from re import M
+from method.addPoly import addPoly
+from method.displayPoly import displayPoly
+from method.subtractPoly import subtractPoly
+from method.multiplyPoly import multiplyPoly
+
+def modInv(mod, x):
+    a = x
+    m = mod
+    x1 = 1
+    x2 = 0
+    while m > 0:
+        q = a//m 
+        r = a - q*m
+        a = m
+        m = r
+        x3 = x1 - q * x2
+        x1 = x2
+        x2 = x3
+    if a == 1:
+        inv = x1 
+    else:
+        inv = "ERROR"   
+    return inv
+
+def getDegree(x):
+    deg = len(x) - 1
+    return deg
+
 def longDivPoly(mod, f, g):
-    return ""
+    q = []
+    r = f.copy()
+    gNew = g.copy()
+    a = modInv(mod, gNew[0])
+    b = gNew[0]
+    for i in range(len(r)):
+        r[i] = (r[i] * a) % mod
+    for j in range(len(gNew)):
+        gNew[j] = (gNew[j] * a) % mod
+    # v = leading/leading
+    if getDegree(g) == 0:
+        v = [r[0]]
+        i = getDegree(r) - getDegree(gNew)
+        while i != 0: 
+            v.append(0)
+        q = addPoly(mod, q, v)[1]
+        r = subtractPoly(mod, r, multiplyPoly(mod, v, gNew)[1])[1]
+    else:       
+        while getDegree(g) <= getDegree(r):
+            v = [r[0]]
+            i = getDegree(r) - getDegree(gNew)
+            while i != 0: 
+                v.append(0)
+                i = i - 1
+            q = addPoly(mod, q, v)[1]
+            r = subtractPoly(mod, r, multiplyPoly(mod, v, gNew)[1])[1]
+    for k in range(len(r)):
+        r[k] = (r[k] * b) % mod
+    return displayPoly(mod, q), displayPoly(mod, r), q, r
+
+
+
+#FINNEAN

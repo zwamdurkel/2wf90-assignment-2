@@ -4,6 +4,7 @@
 #                   Output f as pretty print string and as POLY.
 
 def findPrim(mod, modPoly):
+    
     return ""
 
 #FINNEAN

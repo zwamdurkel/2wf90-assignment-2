@@ -17,7 +17,7 @@ def addPoly(mod, f, g):
         answer.insert(0, numAnswer)
 
     # Remove unnecessary 0's
-    while answer[0] == 0:
+    while answer[0] == 0 and answer != [0]:
         answer.pop(0)
 
     return displayPoly(mod, answer), answer
