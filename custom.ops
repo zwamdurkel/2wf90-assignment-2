@@ -262,7 +262,7 @@
         ]
       }
     },
-    {
+{
       "division-field": {
         "mod": 2,
         "mod-poly": [
@@ -322,6 +322,25 @@
         ],
         "answer": "ERROR",
         "answer-poly": []
+      }
+    },
+    {
+      "equals-field": {
+        "mod": 5,
+        "mod-poly": [
+          1,
+          0,
+          2
+        ],
+        "a": [
+          1,
+          0,
+          0
+        ],
+        "b": [
+          3
+        ],
+        "answer": true
       }
     }
   ]
