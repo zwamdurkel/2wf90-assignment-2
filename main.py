@@ -29,7 +29,7 @@ from method.subtractPoly import subtractPoly  # ALOYS # CORRECT
 
 base_location = './'
 ops_loc = base_location + 'operations.asn'
-exs_loc = base_location + 'custom.ops'
+exs_loc = base_location + 'input.ops'
 
 # Compile specification
 spec = asn.compile_files(ops_loc, codec="jer")
@@ -64,6 +64,12 @@ for exercise in my_exercises['exercises']:
     if operation == 'subtract-poly':
         p['answer'], p['answer-poly'] = subtractPoly(
             p['mod'], p['f'], p['g'])
+    if operation == 'add-table':
+        p['answer'], p['answer-poly'] = addTable(
+            p['mod'], p['mod-poly'])
+    if operation == 'add-field':
+        p['answer'], p['answer-poly'] = addField(
+            p['mod'], p['mod-poly'], p['a'], p['b'])
 
     if operation == 'long-div-poly':
         p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
