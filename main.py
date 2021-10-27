@@ -1,26 +1,26 @@
 import asn1tools as asn
 import json
 
-from method.addField import addField  # (THOMAS) - FINNEAN # CORRECT
-from method.addPoly import addPoly  # ALOYS # CORRECT
-from method.addTable import addTable  # THOMAS
-from method.displayField import displayField # FINNEAN # CORRECT
-from method.displayPoly import displayPoly  # FINNEAN # CORRECT
-from method.divisionField import divisionField # (FINNEAN) - ALOYS # CORRECT (maybe)
-from method.equalsField import equalsField # FINNEAN
-from method.equalsPolyMod import equalsPolyMod # FINNEAN
-from method.euclidPoly import euclidPoly  # ALREADY SOME WORK DONE BY FINNEAN, PLEASE TAKE OVER 
-from method.findIrred import findIrred  # THOMAS
+from method.addField import addField            # ✅(THOMAS) - FINNEAN # CORRECT
+from method.addPoly import addPoly              # ✅ ALOYS # CORRECT
+from method.addTable import addTable            # THOMAS
+from method.displayField import displayField    # ✅ FINNEAN # CORRECT
+from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
+from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
+from method.equalsField import equalsField      # ✅ FINNEAN # CORRECT
+from method.equalsPolyMod import equalsPolyMod  # FINNEAN
+from method.euclidPoly import euclidPoly        # ALREADY SOME WORK DONE BY FINNEAN, PLEASE TAKE OVER 
+from method.findIrred import findIrred          # THOMAS
 from method.findPrim import findPrim 
 from method.inverseField import inverseField
-from method.irreducible import irreducible  # THOMAS
-from method.longDivPoly import longDivPoly  # FINNEAN # CORRECT
-from method.multiplyField import multiplyField # FINNEAN # CORRECT
-from method.multiplyPoly import multiplyPoly  # ALOYS # CORRECT
+from method.irreducible import irreducible      # THOMAS
+from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
+from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
+from method.multiplyPoly import multiplyPoly    # ✅ ALOYS # CORRECT
 from method.multTable import multTable
 from method.primitive import primitive 
-from method.subtractField import subtractField # FINNEAN # CORRECT
-from method.subtractPoly import subtractPoly  # ALOYS # CORRECT
+from method.subtractField import subtractField  # ✅ FINNEAN # CORRECT
+from method.subtractPoly import subtractPoly    # ✅ ALOYS # CORRECT
 
 ### STUDENT PERSPECTIVE (example) ###
 
