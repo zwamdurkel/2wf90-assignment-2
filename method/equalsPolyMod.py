@@ -4,3 +4,5 @@
 
 def equalsPolyMod(mod, f, g, h):
     return ""
+
+#FINNEAN
