@@ -8,7 +8,7 @@ from method.displayPoly import displayPoly
 
 
 def addField(mod, modPoly, a, b):
-    c = addPoly(mod,a,b)
-    d = longDivPoly(mod, c, modPoly)[3]
-    e = displayPoly(mod, d)[1]
-    return e, d
+    answer = longDivPoly(mod, addPoly(mod, a, b)[1], modPoly)[3]
+    return displayPoly(mod, answer), answer
+
+#(verbeterd door) FINNEAN

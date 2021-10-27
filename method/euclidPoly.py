@@ -8,9 +8,22 @@
 
 from method.addPoly import addPoly
 from method.displayPoly import displayPoly
-from method.longDivPoly import longDivPoly, modInv
+from method.longDivPoly import getDegree, modInv
 from method.multiplyPoly import multiplyPoly
 from method.subtractPoly import subtractPoly
+
+def longDiv(mod, a, b):
+    q = [0]
+    r = a.copy()
+    while getDegree(r) >= getDegree(b) and r != [0]:
+        z = [r[0]/b[0]]
+        i = getDegree(r) - getDegree(b)
+        while i != 0: 
+            z.append(0)
+            i = i - 1
+        q = addPoly(mod, q, z)[1]
+        r = subtractPoly(mod, r, multiplyPoly(mod, z, b)[1])[1]
+    return q, r
 
 def euclidPoly(mod, f, g):
     a = f.copy()
@@ -19,8 +32,8 @@ def euclidPoly(mod, f, g):
     v = [1]
     y = [0]
     u = [0]
-    while b != 0:
-        q, r = longDivPoly(mod, a, b)[2:4]
+    while b != [0]:
+        q, r = longDiv(mod, a, b)
         a = b
         b = r
         x2 = x
@@ -29,4 +42,11 @@ def euclidPoly(mod, f, g):
         y = v
         u = subtractPoly(mod, x2, multiplyPoly(mod, q, u)[1])[1]
         v = subtractPoly(mod, y2, multiplyPoly(mod, q, v)[1])[1]
-    return displayPoly(mod, multiplyPoly(mod, x, modInv(f[0]))), displayPoly(mod, multiplyPoly(mod, y, modInv(f[0]))), displayPoly(mod, addPoly(mod, multiplyPoly(mod, x, f), multiplyPoly(mod, y, g))), addPoly(mod, multiplyPoly(mod, x, f), multiplyPoly(mod, y, g))
+    return (
+    displayPoly(mod, multiplyPoly(mod, x, [modInv(mod, f[0])])[1]), 
+    displayPoly(mod, multiplyPoly(mod, y, [modInv(mod, f[0])])[1]), 
+    displayPoly(mod, addPoly(mod, multiplyPoly(mod, x, f)[1], multiplyPoly(mod, y, g)[1])[1]), 
+    addPoly(mod, multiplyPoly(mod, x, f)[1], multiplyPoly(mod, y, g)[1])[1], 
+    multiplyPoly(mod, x, [modInv(mod, f[0])])[1], 
+    multiplyPoly(mod, y, [modInv(mod, f[0])])[1]
+    )

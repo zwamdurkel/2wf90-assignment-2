@@ -38,6 +38,8 @@ def longDivPoly(mod, f, g):
     r = f.copy()
     gNew = g.copy()
     a = modInv(mod, gNew[0])
+    if a == 'ERROR':
+        return 'ERROR', 'ERROR', [], []
     b = [a]
     r = multiplyPoly(mod, r, b)[1]
     gNew = multiplyPoly(mod, gNew, b)[1]
