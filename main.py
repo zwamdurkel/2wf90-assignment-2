@@ -7,8 +7,8 @@ from method.addTable import addTable  # THOMAS
 from method.displayField import displayField # FINNEAN # CORRECT
 from method.displayPoly import displayPoly  # FINNEAN # CORRECT
 from method.divisionField import divisionField # (FINNEAN) - ALOYS # CORRECT (maybe)
-from method.equalsField import equalsField # FINNEAN
-from method.equalsPolyMod import equalsPolyMod # FINNEAN
+from method.equalsField import equalsField # FINNEAN # CORRECT
+from method.equalsPolyMod import equalsPolyMod # FINNEAN # CORRECT
 from method.euclidPoly import euclidPoly  # ALREADY SOME WORK DONE BY FINNEAN, PLEASE TAKE OVER 
 from method.findIrred import findIrred  # THOMAS
 from method.findPrim import findPrim 
@@ -72,6 +72,14 @@ for exercise in my_exercises['exercises']:
     if operation == 'division-field':
         p['answer'], p['answer-poly'] = divisionField(
             p['mod'], p['mod-poly'], p['a'], p['b'])
+
+    if operation == 'equals-field':
+        p['answer'] = equalsField(
+            p['mod'], p['mod-poly'], p['a'], p['b'])
+
+    if operation == 'equals-poly-mod':
+        p['answer'] = equalsPolyMod(
+            p['mod'], p['f'], p['g'], p['h'])
 
     if operation == 'euclid-poly':
         p['answ-a'], p['answ-b'], p['answ-d'], p['answ-d-poly'], p['answ-a-poly'], p['answ-b-poly'] = euclidPoly(

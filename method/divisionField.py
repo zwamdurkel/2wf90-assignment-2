@@ -3,19 +3,24 @@
 # Functionality:    Compute the element f = a / b in F.
 #                   Output f as pretty print string and as POLY.
 from method.addPoly import addPoly
+from method.displayField import displayField
 from method.euclidPoly import longDiv
 from method.longDivPoly import longDivPoly
 from method.displayPoly import displayPoly
 
 
 def divisionField(mod, modPoly, a, b):
-    if b == [0]:
+
+    x = displayField(mod, modPoly, a)[1]
+    y = displayField(mod, modPoly, b)[1]
+
+    if y == [0]:
         return 'ERROR', []
 
-    q, r = longDivPoly(mod, a, b)[2:4]
+    q, r = longDivPoly(mod, x, y)[2:4]
 
     while r != [0]:
-        a = addPoly(mod, a, modPoly)[1]
-        q, r = longDivPoly(mod, a, b)[2:4]
+        x = addPoly(mod, x, modPoly)[1]
+        q, r = longDivPoly(mod, x, y)[2:4]
         
     return displayPoly(mod, q), q

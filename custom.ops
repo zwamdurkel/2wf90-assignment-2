@@ -342,6 +342,59 @@
         ],
         "answer": true
       }
+    },
+    {
+      "equals-poly-mod": {
+        "mod": 7,
+        "f": [
+          1,
+          1,
+          1
+        ],
+        "g": [
+          10
+        ],
+        "h": [
+          1,
+          -1
+        ],
+        "answer": true
+      }
+    },
+    {
+      "equals-poly-mod": {
+        "mod": 5,
+        "f": [
+          1,
+          1,
+          1
+        ],
+        "g": [
+          10
+        ],
+        "h": [
+          1,
+          -1
+        ],
+        "answer": false
+      }
+    },
+    {
+      "equals-poly-mod": {
+        "mod": 7,
+        "f": [
+          1,
+          1,
+          1
+        ],
+        "g": [
+          3
+        ],
+        "h": [
+          0
+        ],
+        "answer": false
+      }
     }
   ]
 }
