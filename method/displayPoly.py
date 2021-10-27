@@ -7,15 +7,16 @@
 def displayPoly(mod, f):
     answer = ''
     for degree in range(len(f)):
-        if (f[-(degree + 1)] % mod) != 0:
+        number = f[-(degree + 1)] % mod
+        if number != 0:
             if len(answer) > 0:
                 answer = '+' + answer
             if degree == 1:
                 answer = 'X' + answer
             if degree > 1:
                 answer = 'X^' + str(degree) + answer
-            if f[-(degree + 1)] != 1 or degree == 0:
-                answer = str(f[-(degree + 1)] % mod) + answer
+            if number != 1 or degree == 0:
+                answer = str(number) + answer
 
     print('Answer:' + answer)
     return answer
