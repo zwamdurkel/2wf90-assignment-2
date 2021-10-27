@@ -1,20 +1,20 @@
 import asn1tools as asn
 import json
 
-from method.addField import addField
+from method.addField import addField  # THOMAS
 from method.addPoly import addPoly  # ALOYS # CORRECT
-from method.addTable import addTable
+from method.addTable import addTable  # THOMAS
 from method.displayField import displayField
-from method.displayPoly import displayPoly #FINNEAN #SUPER CORRECT
+from method.displayPoly import displayPoly  # FINNEAN # CORRECT
 from method.divisionField import divisionField
 from method.equalsField import equalsField
 from method.equalsPolyMod import equalsPolyMod
-from method.euclidPoly import euclidPoly
-from method.findIrred import findIrred
+from method.euclidPoly import euclidPoly  # FINNEAN
+from method.findIrred import findIrred  # THOMAS
 from method.findPrim import findPrim
 from method.inverseField import inverseField
-from method.irreducible import irreducible
-from method.longDivPoly import longDivPoly
+from method.irreducible import irreducible  # THOMAS
+from method.longDivPoly import longDivPoly  # FINNEAN
 from method.multiplyField import multiplyField
 from method.multiplyPoly import multiplyPoly  # ALOYS # CORRECT
 from method.multTable import multTable
