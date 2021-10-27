@@ -67,6 +67,9 @@ for exercise in my_exercises['exercises']:
     if operation == 'add-table':
         p['answer'], p['answer-poly'] = addTable(
             p['mod'], p['mod-poly'])
+    if operation == 'add-field':
+        p['answer'], p['answer-poly'] = addField(
+            p['mod'], p['mod-poly'], p['a'], p['b'])
 
     # Save answer
     my_answers['exercises'].append({operation: p})
