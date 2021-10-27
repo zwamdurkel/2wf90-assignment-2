@@ -5,45 +5,20 @@
 #                   E.g.: X^5 + 2X^4 + 3X^3 + 4X^2 + 5X + 6.
 
 def displayPoly(mod, f):
-    s = ''
-    i = len(f) - 1
-    for x in f:
-        if x != 0:
-            if x != 1:
-                if i == 0:
-                    if i != len(f) - 1:
-                        s = s + '+'
-                    s = s + str(x % mod)
-                    i = i - 1
-                elif i == 1:
-                    if i != len(f) - 1:
-                        s = s + '+'
-                    s = s +  str(x % mod) + 'X'
-                    i = i - 1
-                else: 
-                    if i != len(f) - 1:
-                        s = s + '+'
-                    s = s +  str(x % mod) + 'X^' + str(i)
-                    i = i - 1   
-            else:
-                if i == 0:
-                    if i != len(f) - 1:
-                        s = s + '+'
-                    s = s + str(1)
-                    i = i - 1
-                elif i == 1:
-                    if i != len(f) - 1:
-                        s = s + '+'
-                    s = s + 'X'
-                    i = i - 1
-                else: 
-                    if i != len(f) - 1:
-                        s = s + '+'
-                    s = s + 'X^' + str(i)
-                    i = i - 1  
-        else:
-            i = i - 1
-    print('Answer:' + s)
-    return s
+    answer = ''
+    for degree in range(len(f)):
+        number = f[-(degree + 1)] % mod
+        if number != 0:
+            if len(answer) > 0:
+                answer = '+' + answer
+            if degree == 1:
+                answer = 'X' + answer
+            if degree > 1:
+                answer = 'X^' + str(degree) + answer
+            if number != 1 or degree == 0:
+                answer = str(number) + answer
 
-#FINNEAN
+    print('Answer:' + answer)
+    return answer
+
+# FINNEAN
