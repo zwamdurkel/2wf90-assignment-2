@@ -1,60 +1,38 @@
 {
   "exercises": [
 {
-      "euclid-poly": {
-        "mod": 7,
-        "f": [
+      "inverse-field": {
+        "mod": 2,
+        "mod-poly": [
           1,
           1,
           1
         ],
-        "g": [
-          2,
-          -2
-        ],
-        "answ-a": "5",
-        "answ-b": "X+2",
-        "answ-d": "1",
-        "answ-d-poly": [
-          1
-        ],
-        "answ-a-poly": [
-          5
-        ],
-        "answ-b-poly": [
+        "a": [
           1,
-          2
+          0
+        ],
+        "answer": "X+1",
+        "answer-poly": [
+          1,
+          1
         ]
       }
     },
     {
-      "euclid-poly": {
+      "inverse-field": {
         "mod": 2,
-        "f": [
+        "mod-poly": [
           1,
-          0,
-          1
-        ],
-        "g": [
-          1,
-          0,
-          0,
-          1
-        ],
-        "answ-a": "X",
-        "answ-b": "1",
-        "answ-d": "X+1",
-        "answ-d-poly": [
-          1,
-          1
-        ],
-        "answ-a-poly": [
           1,
           0
         ],
-        "answ-b-poly": [
-          1
-        ]
+        "a": [
+          1,
+          0
+        ],
+        "answer": "ERROR",
+        "answer-poly": []
       }
     }
   ]
