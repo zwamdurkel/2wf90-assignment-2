@@ -3,7 +3,7 @@ import json
 
 from method.addField import addField            # ✅(THOMAS) - FINNEAN # CORRECT
 from method.addPoly import addPoly              # ✅ ALOYS # CORRECT
-from method.addTable import addTable            # ✅THOMAS
+from method.addTable import addTable            # ✅ THOMAS
 from method.displayField import displayField    # ✅ FINNEAN # CORRECT
 from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
 from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
@@ -12,7 +12,7 @@ from method.equalsPolyMod import equalsPolyMod  # ✅ FINNEAN # CORRECT
 from method.euclidPoly import euclidPoly        # ALREADY SOME WORK DONE BY FINNEAN, PLEASE TAKE OVER 
 from method.findIrred import findIrred          # THOMAS
 from method.findPrim import findPrim    	    # THOMAS
-from method.inverseField import inverseField
+from method.inverseField import inverseField    # FINNEAN
 from method.irreducible import irreducible      # THOMAS
 from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
 from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
@@ -81,21 +81,25 @@ for exercise in my_exercises['exercises']:
         p['answer'] = equalsPolyMod(
             p['mod'], p['f'], p['g'], p['h'])
 
-    if operation == 'euclid-poly':
-        p['answ-a'], p['answ-b'], p['answ-d'], p['answ-d-poly'], p['answ-a-poly'], p['answ-b-poly'] = euclidPoly(
-            p['mod'], p['f'], p['g'])
+#    if operation == 'euclid-poly':
+#        p['answ-a'], p['answ-b'], p['answ-d'], p['answ-a-poly'], p['answ-b-poly'], p['answ-d-poly'] = euclidPoly(
+#            p['mod'], p['f'], p['g'])
 
-    if operation == 'find-irred':
-        p['answer'], p['answer-poly'] = findIrred(
-            p['mod'], p['deg'])
+#    if operation == 'find-irred':
+#        p['answer'], p['answer-poly'] = findIrred(
+#            p['mod'], p['deg'])
 
-    if operation == 'find-prim':
-        p['answer'], p['answer-poly'] = findPrim(
-            p['mod'], p['mod-poly'])
+#    if operation == 'find-prim':
+#        p['answer'], p['answer-poly'] = findPrim(
+#            p['mod'], p['mod-poly'])
 
-    if operation == 'irreducible':
-        p['answer'] = irreducible(
-            p['mod'], p['f'])
+#    if operation == 'inverse-field':
+#        p['answer'], p['answer-poly'] = inverseField(
+#            p['mod'], p['mod-poly'], p['a'])
+
+#    if operation == 'irreducible':
+#        p['answer'] = irreducible(
+#            p['mod'], p['f'])
 
     if operation == 'long-div-poly':
         p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
