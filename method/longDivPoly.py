@@ -43,7 +43,6 @@ def longDivPoly(mod, f, g):
     b = [a]
     r = multiplyPoly(mod, r, b)[1]
     gNew = multiplyPoly(mod, gNew, b)[1]
-    # v = leading/leading
     if getDegree(g) == 0:
         v = [r[0]]
         i = getDegree(r) - getDegree(gNew)
