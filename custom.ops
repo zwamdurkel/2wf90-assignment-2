@@ -28,38 +28,33 @@
       }
     },
     {
-      "inverse-field": {
+      "euclid-poly": {
         "mod": 2,
-        "mod-poly": [
+        "f": [
           1,
+          0,
+          1
+        ],
+        "g": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "answ-a": "X",
+        "answ-b": "1",
+        "answ-d": "X+1",
+        "answ-d-poly": [
           1,
           1
         ],
-        "a": [
+        "answ-a-poly": [
           1,
           0
         ],
-        "answer": "X+1",
-        "answer-poly": [
-          1,
+        "answ-b-poly": [
           1
         ]
-      }
-    },
-    {
-      "inverse-field": {
-        "mod": 2,
-        "mod-poly": [
-          1,
-          1,
-          0
-        ],
-        "a": [
-          1,
-          0
-        ],
-        "answer": "ERROR",
-        "answer-poly": []
       }
     }
   ]

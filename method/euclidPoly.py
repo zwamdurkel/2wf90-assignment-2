@@ -42,11 +42,16 @@ def euclidPoly(mod, f, g):
         y = v
         u = subtractPoly(mod, x2, multiplyPoly(mod, q, u)[1])[1]
         v = subtractPoly(mod, y2, multiplyPoly(mod, q, v)[1])[1]
+    a = multiplyPoly(mod, x, [modInv(mod, f[0])])[1]
+    b = multiplyPoly(mod, y, [modInv(mod, f[0])])[1]
+    d = addPoly(mod, multiplyPoly(mod, x, f)[1], multiplyPoly(mod, y, g)[1])[1]
+    if getDegree(d) == 0:
+        a = multiplyPoly(mod, a, [modInv(mod, d[0])])[1]
+        b = multiplyPoly(mod, b, [modInv(mod, d[0])])[1]
+        d = [1]
     return (
-    displayPoly(mod, multiplyPoly(mod, x, [modInv(mod, f[0])])[1]), 
-    displayPoly(mod, multiplyPoly(mod, y, [modInv(mod, f[0])])[1]),
-    displayPoly(mod, addPoly(mod, multiplyPoly(mod, x, f)[1], multiplyPoly(mod, y, g)[1])[1]), 
-    multiplyPoly(mod, x, [modInv(mod, f[0])])[1], 
-    multiplyPoly(mod, y, [modInv(mod, f[0])])[1],
-    addPoly(mod, multiplyPoly(mod, x, f)[1], multiplyPoly(mod, y, g)[1])[1]
+    displayPoly(mod, a), 
+    displayPoly(mod, b),
+    displayPoly(mod, d), 
+    a, b, d
     )
