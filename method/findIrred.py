@@ -2,9 +2,12 @@
 # Output:           STRING answer, POLY answer-poly
 # Functionality:    Find an irreducible polynomial f ∈ Z/pZ[X] of degree n.
 #                   Output f as pretty print string and as POLY.
+
 from random import randint
 from method.irreducible import irreducible
 from method.displayPoly import displayPoly
+
+
 def findIrred(mod, deg):
     a = [0] * (len(deg)+1)
     for i in a:

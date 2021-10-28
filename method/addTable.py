@@ -7,6 +7,7 @@
 from method.addField import addField
 from method.displayPoly import displayPoly
 
+
 def addTable(mod, modPoly):
     answer = [[0] * pow(mod, (len(modPoly)-1)) for i in range(pow(mod, (len(modPoly)-1)))]
     answer2 = [["0"] * pow(mod, (len(modPoly)-1)) for i in range(pow(mod, (len(modPoly)-1)))]

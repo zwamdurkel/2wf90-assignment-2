@@ -5,6 +5,7 @@
 from method.addPoly import addPoly
 from method.longDivPoly import longDivPoly
 
+
 def polMod(mod, x):
     y = x.copy()
     for i in range(len(y)):

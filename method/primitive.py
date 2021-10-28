@@ -6,6 +6,7 @@ import math
 from method.multiplyPoly import multiplyPoly
 from method.longDivPoly import longDivPoly
 
+
 def primeFactors(n):
 
     factors = []
@@ -31,6 +32,7 @@ def primeFactors(n):
 
     return factors
 
+
 def primitive(mod, modPoly, a):
     i = 0
 
@@ -43,6 +45,7 @@ def primitive(mod, modPoly, a):
         i += 1
     
     return False if i < len(unique_factors) else True
+    
 
 def powerPoly(mod, a, power):
     a_copy = a.copy()

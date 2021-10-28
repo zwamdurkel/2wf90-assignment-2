@@ -1,7 +1,10 @@
 # Input:            INTEGER mod, POLY f
 # Output:           BOOLEAN answer
 # Functionality:    Return true iff f is irreducible in Z/pZ[X]
+
 from method.euclidPoly import euclidPoly
+
+
 def irreducible(mod, f):
     t = 1
     poly = [0] * mod
