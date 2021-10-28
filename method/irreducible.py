@@ -25,6 +25,4 @@ def irreducible(mod, f):
             return True
         if(t > len(f)-1):
             return False
-    if(t == len(f)-1):
-        return True
     return False
