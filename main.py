@@ -9,10 +9,10 @@ from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
 from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
 from method.equalsField import equalsField      # ✅ FINNEAN # CORRECT
 from method.equalsPolyMod import equalsPolyMod  # ✅ FINNEAN # CORRECT
-from method.euclidPoly import euclidPoly        # ALREADY SOME WORK DONE BY FINNEAN, PLEASE TAKE OVER 
+from method.euclidPoly import euclidPoly        # ✅ FINNEAN # CORRECT
 from method.findIrred import findIrred          # THOMAS
 from method.findPrim import findPrim    	    # THOMAS
-from method.inverseField import inverseField    # FINNEAN
+from method.inverseField import inverseField    # ✅ FINNEAN # CORRECT
 from method.irreducible import irreducible      # THOMAS
 from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
 from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
@@ -64,7 +64,7 @@ for exercise in my_exercises['exercises']:
             p['mod'], p['mod-poly'], p['a'])
 
     if operation == 'display-poly':
-        p['answer'] = displayPoly(
+        p['answer'], p['answer-poly'] = displayPoly(
             p['mod'], p['f'])
 
     if operation == 'division-field':

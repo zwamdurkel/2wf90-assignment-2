@@ -12,18 +12,6 @@ from method.longDivPoly import getDegree, longDivPoly, modInv
 from method.multiplyPoly import multiplyPoly
 from method.subtractPoly import subtractPoly
 
-def longDiv(mod, a, b):
-    q = [0]
-    r = a.copy()
-    while getDegree(r) >= getDegree(b) and r != [0]:
-        z = [r[0]/b[0]]
-        i = getDegree(r) - getDegree(b)
-        while i != 0: 
-            z.append(0)
-            i = i - 1
-        q = addPoly(mod, q, z)[1]
-        r = subtractPoly(mod, r, multiplyPoly(mod, z, b)[1])[1]
-    return q, r
 
 def euclidPoly(mod, f, g):
     a = f.copy()
@@ -49,9 +37,7 @@ def euclidPoly(mod, f, g):
         a = multiplyPoly(mod, a, [modInv(mod, d[0])])[1]
         b = multiplyPoly(mod, b, [modInv(mod, d[0])])[1]
         d = [1]
-    return (
-    displayPoly(mod, a), 
-    displayPoly(mod, b),
-    displayPoly(mod, d), 
-    a, b, d
-    )
+    if d[0] > 1:
+        d = multiplyPoly(mod, d, [modInv(mod, d[0])])[1]
+    return displayPoly(mod, a)[0], displayPoly(mod, b)[0],displayPoly(mod, d)[0], a, b, d
+    
