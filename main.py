@@ -3,7 +3,7 @@ import json
 
 from method.addField import addField            # ✅(THOMAS) - FINNEAN # CORRECT
 from method.addPoly import addPoly              # ✅ ALOYS # CORRECT
-from method.addTable import addTable            # THOMAS
+from method.addTable import addTable            # ✅THOMAS
 from method.displayField import displayField    # ✅ FINNEAN # CORRECT
 from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
 from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
@@ -17,7 +17,7 @@ from method.irreducible import irreducible      # THOMAS
 from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
 from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
 from method.multiplyPoly import multiplyPoly    # ✅ ALOYS # CORRECT
-from method.multTable import multTable
+from method.multTable import multTable          #yes
 from method.primitive import primitive 
 from method.subtractField import subtractField  # ✅ FINNEAN # CORRECT
 from method.subtractPoly import subtractPoly    # ✅ ALOYS # CORRECT
@@ -108,6 +108,9 @@ for exercise in my_exercises['exercises']:
     if operation == 'multiply-poly':
         p['answer'], p['answer-poly'] = multiplyPoly(
             p['mod'], p['f'], p['g'])
+    if operation == 'mult-table':
+        p['answer'], p['answer-poly'] = multTable(
+            p['mod'], p['mod-poly'])
 
     if operation == 'subtract-field':
         p['answer'], p['answer-poly'] = subtractField(
