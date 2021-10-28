@@ -18,7 +18,7 @@ from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
 from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
 from method.multiplyPoly import multiplyPoly    # ✅ ALOYS # CORRECT
 from method.multTable import multTable          # ✅ THOMAS # CORRECT
-from method.primitive import primitive 
+from method.primitive import primitive          # Aloys will do this if emre decides to do fuck all.
 from method.subtractField import subtractField  # ✅ FINNEAN # CORRECT
 from method.subtractPoly import subtractPoly    # ✅ ALOYS # CORRECT
 
