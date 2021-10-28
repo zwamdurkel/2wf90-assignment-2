@@ -13,10 +13,15 @@ def polMod(mod, x):
 
 def displayPoly(mod, f):
 
+    f_copy = f.copy()
+
+    while len(f_copy) > 0 and f_copy[0] == 0 and f_copy != [0]:
+        f_copy.pop(0)
+
     answer = ''
-    for degree in range(len(f)):
-        number = f[-(degree + 1)] % mod
-        if number != 0 or len(f) == 1:
+    for degree in range(len(f_copy)):
+        number = f_copy[-(degree + 1)] % mod
+        if number != 0 or len(f_copy) == 1:
             if len(answer) > 0:
                 answer = '+' + answer
             if degree == 1:
@@ -26,6 +31,6 @@ def displayPoly(mod, f):
             if number != 1 or degree == 0:
                 answer = str(number) + answer
 
-    return answer, polMod(mod, f)
+    return answer, polMod(mod, f_copy)
 
 # FINNEAN
