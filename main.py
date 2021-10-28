@@ -18,7 +18,7 @@ from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
 from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
 from method.multiplyPoly import multiplyPoly    # ✅ ALOYS # CORRECT
 from method.multTable import multTable          # ✅ THOMAS # CORRECT
-from method.primitive import primitive          # Aloys will do this if emre decides to do fuck all.
+from method.primitive import primitive          # ✅ ALOYS # CORRECT
 from method.subtractField import subtractField  # ✅ FINNEAN # CORRECT
 from method.subtractPoly import subtractPoly    # ✅ ALOYS # CORRECT
 
@@ -110,6 +110,10 @@ for exercise in my_exercises['exercises']:
     if operation == 'mult-table':
         p['answer'], p['answer-poly'] = multTable(
             p['mod'], p['mod-poly'])
+
+    if operation == 'primitive':
+        p['answer'] = primitive(
+            p['mod'], p['mod-poly'], p['a'])
 
     if operation == 'subtract-field':
         p['answer'], p['answer-poly'] = subtractField(
