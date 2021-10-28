@@ -47,13 +47,6 @@ def longDivPoly(mod, f, g):
         q = r
         r = [0]
         return displayPoly(mod, q), displayPoly(mod, r), q, r
-        # v = [r[0]]
-        # i = getDegree(r) - getDegree(gNew)
-        # while i != 0: 
-        #     v.append(0)
-        #     i = i - 1
-        # q = addPoly(mod, q, v)[1]
-        # r = subtractPoly(mod, r, multiplyPoly(mod, v, gNew)[1])[1]
     else:       
         while getDegree(g) <= getDegree(r):
             v = [r[0]]
