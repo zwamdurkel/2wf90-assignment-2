@@ -5,15 +5,16 @@
 from random import randint
 from method.primitive import primitive
 from method.displayPoly import displayPoly
+from method.longDivPoly import longDivPoly
 def findPrim(mod, modPoly):
     a = [0] * (len(modPoly))
     for i in a:
-        a[i] = randint(0,mod)
-    a[0] = randint(0,modPoly[0])
+        a[i] = randint(0,mod-1)
+    longDivPoly(mod, a, modPoly)[3]
     while not primitive(mod, a):
         for i in a:
-            a[i] = randint(0,mod)
-        a[0] = randint(0,modPoly[0])
+            a[i] = randint(0,mod-1)
+        longDivPoly(mod, a, modPoly)[3]
     b = displayPoly(mod, a)[1]
     return b, a
 
