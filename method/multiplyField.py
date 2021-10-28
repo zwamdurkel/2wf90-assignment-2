@@ -2,6 +2,7 @@
 # Output:           STRING answer, POLY answer-poly
 # Functionality:    Compute the element f = a · b in F.
 #                   Output f as pretty print string and as POLY.
+
 from method.multiplyPoly import multiplyPoly
 from method.longDivPoly import longDivPoly
 from method.displayPoly import displayPoly

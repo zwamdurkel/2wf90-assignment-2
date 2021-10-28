@@ -12,6 +12,7 @@ from method.longDivPoly import getDegree, longDivPoly, modInv
 from method.multiplyPoly import multiplyPoly
 from method.subtractPoly import subtractPoly
 
+
 def euclidPoly(mod, f, g):
     a = f.copy()
     b = g.copy()

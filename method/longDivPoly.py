@@ -10,6 +10,7 @@ from method.displayPoly import displayPoly
 from method.subtractPoly import subtractPoly
 from method.multiplyPoly import multiplyPoly
 
+
 def modInv(mod, x):
     a = x
     m = mod
@@ -29,9 +30,11 @@ def modInv(mod, x):
         inv = "ERROR"   
     return inv
 
+
 def getDegree(x):
     deg = len(x) - 1
     return deg
+
 
 def longDivPoly(mod, f, g):
     q = []

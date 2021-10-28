@@ -2,6 +2,7 @@
 # Output:           STRING answer, POLY answer-poly
 # Functionality:    Compute the element f = a / b in F.
 #                   Output f as pretty print string and as POLY.
+
 from method.addPoly import addPoly
 from method.displayField import displayField
 from method.longDivPoly import longDivPoly
