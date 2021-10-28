@@ -21,8 +21,8 @@ def irreducible(mod, f):
         for i in range(pow(mod + 1,t)-2):
             poly[-(i+2)] = 0
         poly[0] = 1
-        if (t == len(f)-1):
-            return True
         if(t > len(f)-1):
             return False
+    if (t == len(f)-1):
+            return True
     return False
