@@ -4,7 +4,6 @@
 #                   Output f as pretty print string and as POLY.
 from method.addPoly import addPoly
 from method.displayField import displayField
-from method.euclidPoly import longDiv
 from method.longDivPoly import longDivPoly
 from method.displayPoly import displayPoly
 
