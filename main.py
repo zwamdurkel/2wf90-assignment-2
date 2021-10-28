@@ -3,11 +3,7 @@ import json
 
 from method.addField import addField            # ✅(THOMAS) - FINNEAN # CORRECT
 from method.addPoly import addPoly              # ✅ ALOYS # CORRECT
-<<<<<<< HEAD
-from method.addTable import addTable            # ✅ THOMAS
-=======
 from method.addTable import addTable            # ✅ THOMAS # CORRECT
->>>>>>> 2c64b2c6d29389e748968dc26466d1e907dea534
 from method.displayField import displayField    # ✅ FINNEAN # CORRECT
 from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
 from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
