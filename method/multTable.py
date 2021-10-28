@@ -30,5 +30,5 @@ def multTable(mod, modPoly):
     print(answer)
     for i in range(pow(mod, (len(modPoly)-1))):
         for j in range(pow(mod, (len(modPoly)-1))):
-            answer2[i][j] = displayPoly(mod, answer[i][j])
+            answer2[i][j] = displayPoly(mod, answer[i][j])[0]
     return answer2, answer

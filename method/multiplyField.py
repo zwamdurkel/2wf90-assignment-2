@@ -10,4 +10,4 @@ from method.displayPoly import displayPoly
 
 def multiplyField(mod, modPoly, a, b):
     answer = longDivPoly(mod, multiplyPoly(mod, a, b)[1], modPoly)[3]
-    return displayPoly(mod, answer), answer
+    return displayPoly(mod, answer)[0], answer

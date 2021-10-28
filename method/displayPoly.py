@@ -5,6 +5,12 @@
 #                   E.g.: X^5 + 2X^4 + 3X^3 + 4X^2 + 5X + 6.
 
 
+def polMod(mod, x):
+    y = x.copy()
+    for i in range(len(y)):
+        y[i] = y[i] % mod
+    return y
+
 def displayPoly(mod, f):
     answer = ''
     for degree in range(len(f)):
@@ -19,7 +25,6 @@ def displayPoly(mod, f):
             if number != 1 or degree == 0:
                 answer = str(number) + answer
 
-    print('Answer:' + answer)
-    return answer
+    return answer, polMod(mod, f)
 
 # FINNEAN

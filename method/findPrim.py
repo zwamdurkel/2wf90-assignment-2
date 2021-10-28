@@ -20,5 +20,5 @@ def findPrim(mod, modPoly):
             a[i] = randint(0, mod-1)
         print(a)
         a = longDivPoly(mod, a, modPoly)[3]
-    b = displayPoly(mod, a)
+    b = displayPoly(mod, a)[0]
     return b, a

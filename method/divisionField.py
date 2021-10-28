@@ -23,4 +23,4 @@ def divisionField(mod, modPoly, a, b):
         x = addPoly(mod, x, modPoly)[1]
         q, r = longDivPoly(mod, x, y)[2:4]
         
-    return displayPoly(mod, q), q
+    return displayPoly(mod, q)[0], q

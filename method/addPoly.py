@@ -20,4 +20,4 @@ def addPoly(mod, f, g):
     while answer[0] == 0 and answer != [0]:
         answer.pop(0)
 
-    return displayPoly(mod, answer), answer
+    return displayPoly(mod, answer)[0], answer

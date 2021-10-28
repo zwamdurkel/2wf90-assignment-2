@@ -64,7 +64,7 @@ for exercise in my_exercises['exercises']:
             p['mod'], p['mod-poly'], p['a'])
 
     if operation == 'display-poly':
-        p['answer'] = displayPoly(
+        p['answer'], p['answer-poly'] = displayPoly(
             p['mod'], p['f'])
 
     if operation == 'division-field':
@@ -83,21 +83,21 @@ for exercise in my_exercises['exercises']:
         p['answ-a'], p['answ-b'], p['answ-d'], p['answ-a-poly'], p['answ-b-poly'], p['answ-d-poly'] = euclidPoly(
             p['mod'], p['f'], p['g'])
 
-    if operation == 'find-irred':
-        p['answer'], p['answer-poly'] = findIrred(
-            p['mod'], p['deg'])
+    # if operation == 'find-irred':
+    #     p['answer'], p['answer-poly'] = findIrred(
+    #         p['mod'], p['deg'])
 
-    if operation == 'find-prim':
-        p['answer'], p['answer-poly'] = findPrim(
-            p['mod'], p['mod-poly'])
+    # if operation == 'find-prim':
+    #     p['answer'], p['answer-poly'] = findPrim(
+    #         p['mod'], p['mod-poly'])
 
     if operation == 'inverse-field':
         p['answer'], p['answer-poly'] = inverseField(
             p['mod'], p['mod-poly'], p['a'])
 
-    if operation == 'irreducible':
-        p['answer'] = irreducible(
-            p['mod'], p['f'])
+    # if operation == 'irreducible':
+    #     p['answer'] = irreducible(
+    #         p['mod'], p['f'])
 
     if operation == 'long-div-poly':
         p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(

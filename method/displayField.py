@@ -10,6 +10,6 @@ from method.longDivPoly import longDivPoly
 
 def displayField(mod, modPoly, a):
     x = longDivPoly(mod, a, modPoly)[3]
-    return displayPoly(mod, x), x
+    return displayPoly(mod, x)[0], x
 
 #FINNEAN

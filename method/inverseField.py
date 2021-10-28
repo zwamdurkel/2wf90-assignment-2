@@ -11,6 +11,6 @@ from method.euclidPoly import euclidPoly
 def inverseField(mod, modPoly, a):
         x, y, d = euclidPoly(mod, a, modPoly)[3:6]
         if d == [1]:
-            return displayPoly(x), x
+            return displayPoly(mod, x)[0], x
         else:
             return "ERROR", []

@@ -37,9 +37,7 @@ def euclidPoly(mod, f, g):
         a = multiplyPoly(mod, a, [modInv(mod, d[0])])[1]
         b = multiplyPoly(mod, b, [modInv(mod, d[0])])[1]
         d = [1]
-    return (
-    displayPoly(mod, a), 
-    displayPoly(mod, b),
-    displayPoly(mod, d), 
-    a, b, d
-    )
+    if d[0] > 1:
+        d = multiplyPoly(mod, d, [modInv(mod, d[0])])[1]
+    return displayPoly(mod, a)[0], displayPoly(mod, b)[0],displayPoly(mod, d)[0], a, b, d
+    
