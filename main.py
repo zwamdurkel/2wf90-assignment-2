@@ -65,7 +65,7 @@ for exercise in my_exercises['exercises']:
                 p['mod'], p['mod-poly'], p['a'])
 
         if operation == 'display-poly':
-            p['answer'] = displayPoly(
+            p['answer'], p['answer-poly'] = displayPoly(
                 p['mod'], p['f'])
 
         if operation == 'division-field':
@@ -96,9 +96,9 @@ for exercise in my_exercises['exercises']:
             p['answer'], p['answer-poly'] = inverseField(
                 p['mod'], p['mod-poly'], p['a'])
 
-        if operation == 'irreducible':
-            p['answer'] = irreducible(
-                p['mod'], p['f'])
+        # if operation == 'irreducible':
+        #     p['answer'] = irreducible(
+        #         p['mod'], p['f'])
 
         if operation == 'long-div-poly':
             p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
