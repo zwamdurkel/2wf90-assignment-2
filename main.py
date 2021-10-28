@@ -1,26 +1,26 @@
 import asn1tools as asn
 import json
 
-from method.addField import addField
-from method.addPoly import addPoly  # ALOYS # CORRECT
-from method.addTable import addTable
-from method.displayField import displayField
-from method.displayPoly import displayPoly #FINNEAN #SUPER CORRECT
-from method.divisionField import divisionField
-from method.equalsField import equalsField
-from method.equalsPolyMod import equalsPolyMod
-from method.euclidPoly import euclidPoly
-from method.findIrred import findIrred
-from method.findPrim import findPrim
+from method.addField import addField            # ✅(THOMAS) - FINNEAN # CORRECT
+from method.addPoly import addPoly              # ✅ ALOYS # CORRECT
+from method.addTable import addTable            # THOMAS
+from method.displayField import displayField    # ✅ FINNEAN # CORRECT
+from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
+from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
+from method.equalsField import equalsField      # ✅ FINNEAN # CORRECT
+from method.equalsPolyMod import equalsPolyMod  # FINNEAN
+from method.euclidPoly import euclidPoly        # ALREADY SOME WORK DONE BY FINNEAN, PLEASE TAKE OVER 
+from method.findIrred import findIrred          # THOMAS
+from method.findPrim import findPrim 
 from method.inverseField import inverseField
-from method.irreducible import irreducible
-from method.longDivPoly import longDivPoly
-from method.multiplyField import multiplyField
-from method.multiplyPoly import multiplyPoly  # ALOYS # CORRECT
+from method.irreducible import irreducible      # THOMAS
+from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
+from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
+from method.multiplyPoly import multiplyPoly    # ✅ ALOYS # CORRECT
 from method.multTable import multTable
-from method.primitive import primitive
-from method.subtractField import subtractField
-from method.subtractPoly import subtractPoly  # ALOYS # CORRECT
+from method.primitive import primitive 
+from method.subtractField import subtractField  # ✅ FINNEAN # CORRECT
+from method.subtractPoly import subtractPoly    # ✅ ALOYS # CORRECT
 
 ### STUDENT PERSPECTIVE (example) ###
 
@@ -29,7 +29,7 @@ from method.subtractPoly import subtractPoly  # ALOYS # CORRECT
 
 base_location = './'
 ops_loc = base_location + 'operations.asn'
-exs_loc = base_location + 'input.ops'
+exs_loc = base_location + 'custom.ops'
 
 # Compile specification
 spec = asn.compile_files(ops_loc, codec="jer")
@@ -49,34 +49,60 @@ for exercise in my_exercises['exercises']:
     operation = exercise[0]  # get operation type
     p = exercise[1]  # get parameters
 
+    if operation == 'add-field':
+        p['answer'], p['answer-poly'] = addField(
+            p['mod'], p['mod-poly'], p['a'], p['b'])
+
     if operation == 'add-poly':
         p['answer'], p['answer-poly'] = addPoly(
             p['mod'], p['f'], p['g'])
+
+    if operation == 'add-table':
+        p['answer'], p['answer-poly'] = addTable(
+            p['mod'], p['mod-poly'])
+
+    if operation == 'display-field':
+        p['answer'], p['answer-poly'] = displayField(
+            p['mod'], p['mod-poly'], p['a'])
 
     if operation == 'display-poly':
         p['answer'] = displayPoly(
             p['mod'], p['f'])
 
-    if operation == 'multiply-poly':
-        p['answer'], p['answer-poly'] = multiplyPoly(
-            p['mod'], p['f'], p['g'])
-
-    if operation == 'subtract-poly':
-        p['answer'], p['answer-poly'] = subtractPoly(
-            p['mod'], p['f'], p['g'])
-    if operation == 'add-table':
-        p['answer'], p['answer-poly'] = addTable(
-            p['mod'], p['mod-poly'])
-    if operation == 'add-field':
-        p['answer'], p['answer-poly'] = addField(
+    if operation == 'division-field':
+        p['answer'], p['answer-poly'] = divisionField(
             p['mod'], p['mod-poly'], p['a'], p['b'])
+
+    if operation == 'equals-field':
+        p['answer'] = equalsField(
+            p['mod'], p['mod-poly'], p['a'], p['b'])
+
+    if operation == 'equals-poly-mod':
+        p['answer'] = equalsPolyMod(
+            p['mod'], p['f'], p['g'], p['h'])
+
+    if operation == 'euclid-poly':
+        p['answ-a'], p['answ-b'], p['answ-d'], p['answ-d-poly'], p['answ-a-poly'], p['answ-b-poly'] = euclidPoly(
+            p['mod'], p['f'], p['g'])
 
     if operation == 'long-div-poly':
         p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
             p['mod'], p['f'], p['g'])
 
-    if operation == 'euclid-poly':
-        p['answer-a'], p['answer-b'], p['answer-d'], p['answer-d-poly'] = euclidPoly(
+    if operation == 'multiply-field':
+        p['answer'], p['answer-poly'] = multiplyField(
+            p['mod'], p['mod-poly'], p['a'], p['b'])
+
+    if operation == 'multiply-poly':
+        p['answer'], p['answer-poly'] = multiplyPoly(
+            p['mod'], p['f'], p['g'])
+
+    if operation == 'subtract-field':
+        p['answer'], p['answer-poly'] = subtractField(
+            p['mod'], p['mod-poly'], p['a'], p['b'])
+
+    if operation == 'subtract-poly':
+        p['answer'], p['answer-poly'] = subtractPoly(
             p['mod'], p['f'], p['g'])
 
     # Save answer

@@ -38,17 +38,18 @@ def longDivPoly(mod, f, g):
     r = f.copy()
     gNew = g.copy()
     a = modInv(mod, gNew[0])
-    b = gNew[0]
-    for i in range(len(r)):
-        r[i] = (r[i] * a) % mod
-    for j in range(len(gNew)):
-        gNew[j] = (gNew[j] * a) % mod
+    if a == 'ERROR':
+        return 'ERROR', 'ERROR', [], []
+    b = [a]
+    r = multiplyPoly(mod, r, b)[1]
+    gNew = multiplyPoly(mod, gNew, b)[1]
     # v = leading/leading
     if getDegree(g) == 0:
         v = [r[0]]
         i = getDegree(r) - getDegree(gNew)
         while i != 0: 
             v.append(0)
+            i = i - 1
         q = addPoly(mod, q, v)[1]
         r = subtractPoly(mod, r, multiplyPoly(mod, v, gNew)[1])[1]
     else:       
@@ -61,7 +62,7 @@ def longDivPoly(mod, f, g):
             q = addPoly(mod, q, v)[1]
             r = subtractPoly(mod, r, multiplyPoly(mod, v, gNew)[1])[1]
     for k in range(len(r)):
-        r[k] = (r[k] * b) % mod
+        r[k] = (r[k] * g[0]) % mod
     return displayPoly(mod, q), displayPoly(mod, r), q, r
 
 
