@@ -11,7 +11,7 @@ def findPrim(mod, modPoly):
     for i in a:
         a[i] = randint(0,mod-1)
     longDivPoly(mod, a, modPoly)[3]
-    while not primitive(mod, a):
+    while not primitive(mod, modPoly, a):
         for i in a:
             a[i] = randint(0,mod-1)
         longDivPoly(mod, a, modPoly)[3]

@@ -9,7 +9,7 @@ def findIrred(mod, deg):
     a = [0] * (len(deg)+1)
     for i in a:
         a[i] = randint(0,mod-1)
-    while not irreducible(mod, deg, a):
+    while not irreducible(mod, a):
         for i in a:
             a[i] = randint(0,mod-1)
     b = displayPoly(mod, a)[1]
