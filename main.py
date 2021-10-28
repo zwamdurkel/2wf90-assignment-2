@@ -8,7 +8,7 @@ from method.displayField import displayField    # ✅ FINNEAN # CORRECT
 from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
 from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
 from method.equalsField import equalsField      # ✅ FINNEAN # CORRECT
-from method.equalsPolyMod import equalsPolyMod  # FINNEAN
+from method.equalsPolyMod import equalsPolyMod  # ✅ FINNEAN # CORRECT
 from method.euclidPoly import euclidPoly        # ALREADY SOME WORK DONE BY FINNEAN, PLEASE TAKE OVER 
 from method.findIrred import findIrred          # THOMAS
 from method.findPrim import findPrim 
@@ -29,7 +29,7 @@ from method.subtractPoly import subtractPoly    # ✅ ALOYS # CORRECT
 
 base_location = './'
 ops_loc = base_location + 'operations.asn'
-exs_loc = base_location + 'custom.ops'
+exs_loc = base_location + 'input.ops'
 
 # Compile specification
 spec = asn.compile_files(ops_loc, codec="jer")
