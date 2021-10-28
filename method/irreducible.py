@@ -9,7 +9,7 @@ def irreducible(mod, f):
     for i in range(mod-2):
         poly[i+1] = 0
     poly[mod-1] = 1
-    while euclidPoly(f, poly)[5] == 1:
+    while euclidPoly(mod, f, poly)[5] == 1:
         t += 1
         poly[0] =  mod-1
         for i in range(pow(mod,t)-2):
