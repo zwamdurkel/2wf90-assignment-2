@@ -3,7 +3,11 @@ import json
 
 from method.addField import addField            # ✅(THOMAS) - FINNEAN # CORRECT
 from method.addPoly import addPoly              # ✅ ALOYS # CORRECT
+<<<<<<< HEAD
 from method.addTable import addTable            # ✅ THOMAS
+=======
+from method.addTable import addTable            # ✅ THOMAS # CORRECT
+>>>>>>> 2c64b2c6d29389e748968dc26466d1e907dea534
 from method.displayField import displayField    # ✅ FINNEAN # CORRECT
 from method.displayPoly import displayPoly      # ✅ FINNEAN # CORRECT
 from method.divisionField import divisionField  # ✅ (FINNEAN) - ALOYS # CORRECT (maybe)
@@ -17,12 +21,10 @@ from method.irreducible import irreducible      # THOMAS
 from method.longDivPoly import longDivPoly      # ✅ FINNEAN # CORRECT
 from method.multiplyField import multiplyField  # ✅ FINNEAN # CORRECT
 from method.multiplyPoly import multiplyPoly    # ✅ ALOYS # CORRECT
-from method.multTable import multTable          #yes
-from method.primitive import primitive 
+from method.multTable import multTable          # ✅ THOMAS # CORRECT
+from method.primitive import primitive          # ✅ ALOYS # CORRECT
 from method.subtractField import subtractField  # ✅ FINNEAN # CORRECT
 from method.subtractPoly import subtractPoly    # ✅ ALOYS # CORRECT
-
-### STUDENT PERSPECTIVE (example) ###
 
 # Below code should behave like a black-box.
 # That means that by clicking RUN (and, perhaps, changing the location of the exercise file), your output file should be generated.
@@ -81,25 +83,25 @@ for exercise in my_exercises['exercises']:
         p['answer'] = equalsPolyMod(
             p['mod'], p['f'], p['g'], p['h'])
 
-#    if operation == 'euclid-poly':
-#        p['answ-a'], p['answ-b'], p['answ-d'], p['answ-a-poly'], p['answ-b-poly'], p['answ-d-poly'] = euclidPoly(
-#            p['mod'], p['f'], p['g'])
+    if operation == 'euclid-poly':
+        p['answ-a'], p['answ-b'], p['answ-d'], p['answ-a-poly'], p['answ-b-poly'], p['answ-d-poly'] = euclidPoly(
+            p['mod'], p['f'], p['g'])
 
-#    if operation == 'find-irred':
-#        p['answer'], p['answer-poly'] = findIrred(
-#            p['mod'], p['deg'])
+    if operation == 'find-irred':
+        p['answer'], p['answer-poly'] = findIrred(
+            p['mod'], p['deg'])
 
-#    if operation == 'find-prim':
-#        p['answer'], p['answer-poly'] = findPrim(
-#            p['mod'], p['mod-poly'])
+    if operation == 'find-prim':
+        p['answer'], p['answer-poly'] = findPrim(
+            p['mod'], p['mod-poly'])
 
-#    if operation == 'inverse-field':
-#        p['answer'], p['answer-poly'] = inverseField(
-#            p['mod'], p['mod-poly'], p['a'])
+    if operation == 'inverse-field':
+        p['answer'], p['answer-poly'] = inverseField(
+            p['mod'], p['mod-poly'], p['a'])
 
-#    if operation == 'irreducible':
-#        p['answer'] = irreducible(
-#            p['mod'], p['f'])
+    if operation == 'irreducible':
+        p['answer'] = irreducible(
+            p['mod'], p['f'])
 
     if operation == 'long-div-poly':
         p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
@@ -112,9 +114,14 @@ for exercise in my_exercises['exercises']:
     if operation == 'multiply-poly':
         p['answer'], p['answer-poly'] = multiplyPoly(
             p['mod'], p['f'], p['g'])
+
     if operation == 'mult-table':
         p['answer'], p['answer-poly'] = multTable(
             p['mod'], p['mod-poly'])
+
+    if operation == 'primitive':
+        p['answer'] = primitive(
+            p['mod'], p['mod-poly'], p['a'])
 
     if operation == 'subtract-field':
         p['answer'], p['answer-poly'] = subtractField(
