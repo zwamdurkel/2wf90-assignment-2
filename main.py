@@ -47,85 +47,89 @@ for exercise in my_exercises['exercises']:
     operation = exercise[0]  # get operation type
     p = exercise[1]  # get parameters
 
-    if operation == 'add-field':
-        p['answer'], p['answer-poly'] = addField(
-            p['mod'], p['mod-poly'], p['a'], p['b'])
+    try:
+        if operation == 'add-field':
+            p['answer'], p['answer-poly'] = addField(
+                p['mod'], p['mod-poly'], p['a'], p['b'])
 
-    if operation == 'add-poly':
-        p['answer'], p['answer-poly'] = addPoly(
-            p['mod'], p['f'], p['g'])
+        if operation == 'add-poly':
+            p['answer'], p['answer-poly'] = addPoly(
+                p['mod'], p['f'], p['g'])
 
-    if operation == 'add-table':
-        p['answer'], p['answer-poly'] = addTable(
-            p['mod'], p['mod-poly'])
+        if operation == 'add-table':
+            p['answer'], p['answer-poly'] = addTable(
+                p['mod'], p['mod-poly'])
 
-    if operation == 'display-field':
-        p['answer'], p['answer-poly'] = displayField(
-            p['mod'], p['mod-poly'], p['a'])
+        if operation == 'display-field':
+            p['answer'], p['answer-poly'] = displayField(
+                p['mod'], p['mod-poly'], p['a'])
 
-    if operation == 'display-poly':
-        p['answer'], p['answer-poly'] = displayPoly(
-            p['mod'], p['f'])
+        if operation == 'display-poly':
+            p['answer'] = displayPoly(
+                p['mod'], p['f'])
 
-    if operation == 'division-field':
-        p['answer'], p['answer-poly'] = divisionField(
-            p['mod'], p['mod-poly'], p['a'], p['b'])
+        if operation == 'division-field':
+            p['answer'], p['answer-poly'] = divisionField(
+                p['mod'], p['mod-poly'], p['a'], p['b'])
 
-    if operation == 'equals-field':
-        p['answer'] = equalsField(
-            p['mod'], p['mod-poly'], p['a'], p['b'])
+        if operation == 'equals-field':
+            p['answer'] = equalsField(
+                p['mod'], p['mod-poly'], p['a'], p['b'])
 
-    if operation == 'equals-poly-mod':
-        p['answer'] = equalsPolyMod(
-            p['mod'], p['f'], p['g'], p['h'])
+        if operation == 'equals-poly-mod':
+            p['answer'] = equalsPolyMod(
+                p['mod'], p['f'], p['g'], p['h'])
 
-    if operation == 'euclid-poly':
-        p['answ-a'], p['answ-b'], p['answ-d'], p['answ-a-poly'], p['answ-b-poly'], p['answ-d-poly'] = euclidPoly(
-            p['mod'], p['f'], p['g'])
+        if operation == 'euclid-poly':
+            p['answ-a'], p['answ-b'], p['answ-d'], p['answ-a-poly'], p['answ-b-poly'], p['answ-d-poly'] = euclidPoly(
+                p['mod'], p['f'], p['g'])
 
-    if operation == 'find-irred':
-        p['answer'], p['answer-poly'] = findIrred(
-            p['mod'], p['deg'])
+        if operation == 'find-irred':
+            p['answer'], p['answer-poly'] = findIrred(
+                p['mod'], p['deg'])
 
-    if operation == 'find-prim':
-        p['answer'], p['answer-poly'] = findPrim(
-            p['mod'], p['mod-poly'])
+        if operation == 'find-prim':
+            p['answer'], p['answer-poly'] = findPrim(
+                p['mod'], p['mod-poly'])
 
-    if operation == 'inverse-field':
-        p['answer'], p['answer-poly'] = inverseField(
-            p['mod'], p['mod-poly'], p['a'])
+        if operation == 'inverse-field':
+            p['answer'], p['answer-poly'] = inverseField(
+                p['mod'], p['mod-poly'], p['a'])
 
-    if operation == 'irreducible':
-        p['answer'] = irreducible(
-            p['mod'], p['f'])
+        if operation == 'irreducible':
+            p['answer'] = irreducible(
+                p['mod'], p['f'])
 
-    if operation == 'long-div-poly':
-        p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
-            p['mod'], p['f'], p['g'])
+        if operation == 'long-div-poly':
+            p['answ-q'], p['answ-r'], p['answ-q-poly'], p['answ-r-poly'] = longDivPoly(
+                p['mod'], p['f'], p['g'])
 
-    if operation == 'multiply-field':
-        p['answer'], p['answer-poly'] = multiplyField(
-            p['mod'], p['mod-poly'], p['a'], p['b'])
+        if operation == 'multiply-field':
+            p['answer'], p['answer-poly'] = multiplyField(
+                p['mod'], p['mod-poly'], p['a'], p['b'])
 
-    if operation == 'multiply-poly':
-        p['answer'], p['answer-poly'] = multiplyPoly(
-            p['mod'], p['f'], p['g'])
+        if operation == 'multiply-poly':
+            p['answer'], p['answer-poly'] = multiplyPoly(
+                p['mod'], p['f'], p['g'])
 
-    if operation == 'mult-table':
-        p['answer'], p['answer-poly'] = multTable(
-            p['mod'], p['mod-poly'])
+        if operation == 'mult-table':
+            p['answer'], p['answer-poly'] = multTable(
+                p['mod'], p['mod-poly'])
 
-    if operation == 'primitive':
-        p['answer'] = primitive(
-            p['mod'], p['mod-poly'], p['a'])
+        if operation == 'primitive':
+            p['answer'] = primitive(
+                p['mod'], p['mod-poly'], p['a'])
 
-    if operation == 'subtract-field':
-        p['answer'], p['answer-poly'] = subtractField(
-            p['mod'], p['mod-poly'], p['a'], p['b'])
+        if operation == 'subtract-field':
+            p['answer'], p['answer-poly'] = subtractField(
+                p['mod'], p['mod-poly'], p['a'], p['b'])
 
-    if operation == 'subtract-poly':
-        p['answer'], p['answer-poly'] = subtractPoly(
-            p['mod'], p['f'], p['g'])
+        if operation == 'subtract-poly':
+            p['answer'], p['answer-poly'] = subtractPoly(
+                p['mod'], p['f'], p['g'])
+
+    except Exception as inst:
+        print(inst)
 
     # Save answer
     my_answers['exercises'].append({operation: p})
